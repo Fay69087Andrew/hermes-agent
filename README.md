@@ -2,6 +2,8 @@
 
 A fork of [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) — an autonomous agent framework powered by Hermes models with tool-calling and structured output support.
 
+> **Personal fork** — I'm using this to experiment with local LLM agents via [Ollama](https://ollama.ai). Main changes: adjusted defaults to work better with local inference.
+
 ## Features
 
 - 🤖 Powered by Nous Research's Hermes model family
@@ -59,11 +61,11 @@ Key settings:
 
 | Variable | Description | Default |
 |---|---|---|
-| `OPENAI_API_BASE` | API base URL | `http://localhost:8000/v1` |
+| `OPENAI_API_BASE` | API base URL | `http://localhost:11434/v1` |
 | `OPENAI_API_KEY` | API key | `sk-...` |
 | `MODEL_NAME` | Model to use | `NousResearch/Hermes-3-Llama-3.1-8B` |
 | `MAX_ITERATIONS` | Max agent loop iterations | `10` |
-| `TEMPERATURE` | Sampling temperature | `0.7` |
+| `TEMPERATURE` | Sampling temperature | `0.3` |
 
 ## Contributing
 
