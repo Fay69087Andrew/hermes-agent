@@ -1,3 +1,4 @@
+```
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.backends.legacy:build"
@@ -73,7 +74,8 @@ ignore = ["E501"]
 
 [tool.mypy]
 python_version = "3.10"
-strict = true
+# Relaxed from upstream strict=true — too noisy for personal exploration
+strict = false
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
@@ -84,3 +86,4 @@ addopts = "--cov=hermes_agent --cov-report=term-missing"
 [tool.coverage.run]
 source = ["src"]
 omit = ["tests/*"]
+```
