@@ -65,9 +65,11 @@ Key settings:
 | `OPENAI_API_KEY` | API key | `sk-...` |
 | `MODEL_NAME` | Model to use | `NousResearch/Hermes-3-Llama-3.1-8B` |
 | `MAX_ITERATIONS` | Max agent loop iterations | `5` |
-| `TEMPERATURE` | Sampling temperature | `0.3` |
+| `TEMPERATURE` | Sampling temperature | `0.1` |
 
 > **Note:** I lowered `MAX_ITERATIONS` from `10` to `5` — found that most tasks complete well within 5 steps locally, and it prevents runaway loops when the model gets confused.
+
+> **Note:** I lowered `TEMPERATURE` from `0.3` to `0.1` — at 0.3 the model occasionally went off-script with tool arguments; 0.1 keeps outputs more deterministic and reliable for tool-calling.
 
 ## Contributing
 
