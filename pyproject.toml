@@ -1,3 +1,4 @@
+```
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.backends.legacy:build"
@@ -81,8 +82,10 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-addopts = "--cov=hermes_agent --cov-report=term-missing"
+# Removed --cov-report=term-missing to keep test output less cluttered locally
+addopts = "--cov=hermes_agent"
 
 [tool.coverage.run]
 source = ["src"]
 omit = ["tests/*"]
+```
