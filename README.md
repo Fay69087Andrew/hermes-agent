@@ -67,12 +67,15 @@ Key settings:
 | `MAX_ITERATIONS` | Max agent loop iterations | `5` |
 | `TEMPERATURE` | Sampling temperature | `0.1` |
 | `REQUEST_TIMEOUT` | HTTP request timeout in seconds | `120` |
+| `MAX_TOKENS` | Max tokens per response | `1024` |
 
 > **Note:** I lowered `MAX_ITERATIONS` from `10` to `5` — found that most tasks complete well within 5 steps locally, and it prevents runaway loops when the model gets confused.
 
 > **Note:** I lowered `TEMPERATURE` from `0.3` to `0.1` — at 0.3 the model occasionally went off-script with tool arguments; 0.1 keeps outputs more deterministic and reliable for tool-calling.
 
 > **Note:** Added `REQUEST_TIMEOUT` defaulting to `120` seconds — Ollama on my machine can be slow to respond on first inference (model loading), and the original 30s default caused frequent timeout errors on cold starts.
+
+> **Note:** Added `MAX_TOKENS` defaulting to `1024` — without an explicit cap, some responses ballooned to 4k+ tokens mid-chain which noticeably slowed down multi-step tasks locally.
 
 ## Contributing
 
